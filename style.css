@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+body{
+    background-image: url('/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem;
+    color: white;
+}
+/* REPETITIVE STYLINGS */
+.center{
+    text-align: center;
+}
+.fontsmall{
+    font-size: 14px;
+}
+.white65{
+    color: rgba(255, 255, 255, 0.65);
+}
+.green{
+    color: #41CCB1;
+}
+.red{
+    color: #AC3434;
+}
+.font600{
+    font-weight: 600;
+}
+.font700{
+    font-weight: 700;
+}
+.flexgap{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.flexgapsmall{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    /* width: 90%;
+    margin: auto; */
+}
+/* HEADER STYLING */
+header{
+    display: flex;
+    justify-content: space-between;
+    text-shadow: 0px 0px 88px rgba(255, 255, 255, 0.15);
+    margin: auto;
+    align-items: flex-end;
+}
+header h1{
+    font-size: 40px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+/* MAIN SECTION */
+main{
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.park{
+    text-align: center;
+    padding: 1rem;
+    border-radius: 18px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+.parkfree{
+    background: rgba(255, 255, 255, 0.01);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+}
+.parkfree:hover{
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+.parkselected{
+    border: 2px solid rgba(0, 217, 178, 0.05);
+    background: rgba(0, 217, 178, 0.15);
+}
+.parkselected:hover{
+    background: rgba(0, 217, 178, 0.25);
+}
+.parkselected button{
+    position: absolute;
+    bottom: 1rem;
+    font-weight: 700;
+    color: #3F2610;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 2px 8px 2px 2px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 201, 62, 0.9);
+    cursor: pointer;
+}
+.parkoccupied{
+    background: rgba(172, 52, 52, 0.08);
+    border: 2px solid rgba(172, 52, 52, 0.25);
+}
+.parkoccupied:hover{
+    background: rgba(172, 52, 52, 0.15);
+    border: 2px solid rgba(172, 52, 52, 0.45);
+}
+.dash{
+    width: 100px;
+    margin: 0 auto 5px auto;
+    height: 6px;
+    border-radius: 2px;
+}
+.dashfree{
+    background: rgba(255, 255, 255, 0.11);
+}
+.dashselected{
+    background: rgba(0, 217, 178, 0.35);
+}
+.dashoccupied{
+    background: rgba(172, 52, 52, 0.25);
+}
+.inner{
+    flex: 1;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 190px; */
+}
+.parkfree .inner{
+    background: rgba(255, 255, 255, 0.02);
+}
+.parkfree .inner:hover{
+    background: rgba(255, 255, 255, 0.08);
+}
+.parkselected .inner{
+    background-image: url(/images/pattern-green.png), url(/images/green-dashed.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.parkselected .inner:hover{
+    background-image: url(/images/pattern-green-hover.png), url(/images/green-dashed.png);
+}
+.parkoccupied .inner{
+    border: 2px solid rgba(172, 52, 52, 0.05);
+    background-image: url(/images/pattern-red.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.parkoccupied .inner:hover{
+    background-image: url(/images/pattern-red-hover.png);
+}
+.id{
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 103%;
+    text-align: center;
+    letter-spacing: 0.12em;
+    width: max-content;
+    margin: auto;
+    border-radius: 0 0px 5px 5px;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    text-shadow: 0px 0px 88px rgba(255, 255, 255, 0.15);
+}
+.idfree{
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.65);
+}
+.idselected{
+    background: #41CCB1;
+    color: #0B463B;
+}
+.idoccupied{
+    background-color: #2B0D0B;
+    color: rgba(172, 52, 52, 0.65);
+}
+
+@media screen and (min-width: 1400px) {
+    .container{
+        width: 75%;
+        margin: 2rem auto;
+
+    }
+}
