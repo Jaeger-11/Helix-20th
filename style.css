@@ -5,7 +5,7 @@
     -ms-user-select: none; 
     user-select: none; 
     font-family: 'Outfit', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     box-sizing: border-box;
 }
 ::-webkit-scrollbar {
@@ -23,7 +23,7 @@ body{
     background-image: url('/images/background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     color: white;
 }
 /* REPETITIVE STYLINGS */
@@ -72,13 +72,13 @@ header{
     align-items: flex-end;
 }
 header h1{
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 /* MAIN SECTION */
 main{
-    margin: 2rem auto;
+    margin: 1rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 1.5rem;
@@ -89,7 +89,7 @@ main{
     text-align: center;
     padding: 1rem;
     border-radius: 18px;
-    height: 310px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -113,7 +113,7 @@ main{
 }
 .parkselected button{
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.5rem;
     font-weight: 700;
     color: #3F2610;
     font-size: 16px;
@@ -155,7 +155,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 190px;
+    width: 200px;
 }
 .parkfree .inner{
     background: rgba(255, 255, 255, 0.02);
@@ -166,7 +166,7 @@ main{
 .parkselected .inner{
     background-image: url(/images/pattern-green.png), url(/images/green-dashed.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 .parkselected .inner:hover{
     background-image: url(/images/pattern-green-hover.png), url(/images/green-dashed.png);
@@ -175,7 +175,7 @@ main{
     border: 2px solid rgba(172, 52, 52, 0.05);
     background-image: url(/images/pattern-red.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 .parkoccupied .inner:hover{
     background-image: url(/images/pattern-red-hover.png);
@@ -245,11 +245,18 @@ main{
     border: none;
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1600px) {
+    *{
+        font-size: 20px;
+    }
     body{
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 2rem;
+    }
+    header h1{
+        font-size: 40px;
     }
     .container{
         max-width: 1400;
@@ -259,6 +266,9 @@ main{
         gap: 2rem;
         display: flex;
         flex-wrap: wrap;
+    }
+    .park{
+        height: 310px;
     }
     .leftbtn , .rightbtn{
         padding: 0.5rem 0.8rem;
