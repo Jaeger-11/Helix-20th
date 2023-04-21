@@ -83,7 +83,6 @@ main{
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 1.5rem;
     justify-content: center;
-    flex-wrap: wrap;
     position: relative;
 }
 .park{
@@ -248,7 +247,7 @@ main{
 
 @media screen and (min-width: 1400px) {
     .container{
-        width: 85%;
+        width: 90%;
         margin: 2rem auto;
     }
     main{
@@ -263,4 +262,31 @@ main{
     .rightbtn{
         right: -4rem;
     }
+}
+
+/* GARAGE STYLING */
+.garage-search{
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+    border-radius: 18px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+.search{
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.search::placeholder{
+    font-size: 14px;
+    font-weight: 600;
+}
+.filter{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 0.4rem 1rem;
 }
