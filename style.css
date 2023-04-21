@@ -84,6 +84,7 @@ main{
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
 }
 .park{
     text-align: center;
@@ -94,6 +95,7 @@ main{
     flex-direction: column;
     gap: 0.5rem;
     cursor: pointer;
+    margin: auto;
 }
 .parkfree{
     background: rgba(255, 255, 255, 0.01);
@@ -154,7 +156,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: 190px; */
+    width: 190px;
 }
 .parkfree .inner{
     background: rgba(255, 255, 255, 0.02);
@@ -207,11 +209,58 @@ main{
     background-color: #2B0D0B;
     color: rgba(172, 52, 52, 0.65);
 }
+.leftbtn , .rightbtn{
+    border: 3px solid black;
+    border-radius: 11px;
+    background-color: white;
+    padding: 0.3rem 0.5rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+}
+.leftbtn{
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.rightbtn{
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.page{
+    position: relative;
+}
+.escape{
+    position: absolute;
+    right: 2rem;
+    bottom: 0.5rem;
+}
+.esc{
+    padding: 0.2rem 0.5rem;
+    box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
+    border: none;
+}
 
 @media screen and (min-width: 1400px) {
     .container{
-        width: 75%;
+        width: 85%;
         margin: 2rem auto;
-
+    }
+    main{
+        gap: 2rem;
+    }
+    .leftbtn , .rightbtn{
+        padding: 0.5rem 0.8rem;
+    }
+    .leftbtn{
+        left: -4rem;
+    }
+    .rightbtn{
+        right: -4rem;
     }
 }
