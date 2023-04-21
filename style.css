@@ -155,7 +155,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
+    width: 190px;
 }
 .parkfree .inner{
     background: rgba(255, 255, 255, 0.02);
@@ -267,6 +267,9 @@ main{
         display: flex;
         flex-wrap: wrap;
     }
+    .inner{
+        width: 200px;
+    }
     .park{
         height: 310px;
     }
@@ -283,8 +286,27 @@ main{
 
 @media screen and (min-width:1800px) {
     .container{
-        width: 80%;
+        max-width: 1600px;
         margin: auto;
+    }
+    .inner{
+        width: 240px;
+    }
+}
+
+@media screen and (min-width:2400px) {
+    .container{
+        max-width: 2000px;
+        margin: auto;
+    }
+    header h1{
+        font-size: 45px;
+    }
+    .inner{
+        width: 260px;
+    }
+    .park{
+        height: 350px;
     }
 }
 
