@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+body{
+    background-image: url('/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1.5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 90vw;
+    margin: auto;
+}
+main{
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    justify-content: center;
+    position: relative;
+}
+.center{
+    text-align: center;
+}
+.fontsmall{
+    font-size: 14px;
+}
+.white65{
+    color: rgba(255, 255, 255, 0.65);
+}
+.font600{
+    font-weight: 600;
+}
+.font700{
+    font-weight: 700;
+}
+.flexgap{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.flexgapsmall{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* GARAGE STYLING */
+.garage-search{
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+    border-radius: 18px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+.garage-search:hover{
+    background: rgba(255, 255, 255, 0.05);
+}
+.garage-search:active{
+    background: rgba(255, 255, 255, 0.04);
+}
+.search{
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+.search::placeholder{
+    font-size: 14px;
+    font-weight: 600;
+}
+.filter{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 0.4rem 1rem;
+}
+.cardetail{
+    position: relative;
+    padding: 0.5rem;
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+    border-radius: 18px;
+    cursor: pointer;
+}
+.whitecar{
+    width: 50%;
+}
+.star{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+.normal{
+    background: rgba(255, 255, 255, 0.01);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+}
+.normal:hover{
+
+}
+.gold{
+    background: rgba(255, 201, 62, 0.07);
+    border: 2px solid rgba(255, 201, 62, 0.1);
+}
+.gold:hover{
+
+}
+.green{
+    background: rgba(65, 204, 177, 0.07);
+    border: 2px dashed rgba(65, 204, 177, 0.15);
+}
+.carname{
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 0.2rem;
+}
+.description{
+    font-size: 14px;
+    line-height: 15.12px;
+}
+
+@media screen and (min-width:1600px) {
+    .cardetail{
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width:2400px) {
+    body{
+        font-size: 24px;
+    }
+    .container{
+        width: 80vw;
+    }
+    main{
+        margin: 3rem auto;
+        gap: 1rem;
+    }
+}
