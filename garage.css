@@ -7,6 +7,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 20px;
     box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -28,13 +29,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 .container{
     width: 90vw;
     margin: auto;
 }
 main{
-    margin: 1rem auto;
+    margin: 0.5rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.5rem;
@@ -69,13 +71,17 @@ main{
 }
 
 /* GARAGE STYLING */
+header{
+    width: 90%;
+    margin: auto;
+}
 .garage-search{
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
     border-radius: 18px;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+    padding: 0.3rem;
+    margin-bottom: 0.5rem;
 }
 .garage-search:hover{
     background: rgba(255, 255, 255, 0.05);
@@ -99,6 +105,14 @@ main{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.65);
     padding: 0.4rem 1rem;
+}
+.filter:hover{
+    background: rgba(255, 255, 255, 0.22);
+}
+.filter:active{
+    background: #41CCB1;
+    color: #0B463B;
+    box-shadow: 0px 0px 20px rgba(65, 204, 177, 0.25);
 }
 .cardetail{
     position: relative;
@@ -131,6 +145,9 @@ main{
     background: rgba(255, 201, 62, 0.07);
     border: 2px solid rgba(255, 201, 62, 0.1);
 }
+.gold .whitecar:hover{
+    content: url('/images/car-gold-hover.png');
+}
 .gold:hover{
     background: rgba(255, 201, 62, 0.12);
     border: 2px solid rgba(255, 201, 62, 0.15);
@@ -139,19 +156,55 @@ main{
     background: rgba(65, 204, 177, 0.07);
     border: 2px dashed rgba(65, 204, 177, 0.15);
 }
+.green button{
+    font-weight: 700;
+    color: #3F2610;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 0px 8px 0px 2px;
+    margin-top: 0.4rem;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 201, 62, 0.9);
+    cursor: pointer;
+}
+.green button img{
+    width: 2rem;
+}
 .carname{
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;
-    margin-bottom: 0.2rem;
 }
 .description{
     font-size: 14px;
     line-height: 15.12px;
 }
+.tabs{
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+}
+.esc{
+    padding: 0.2rem 0.5rem;
+    box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+@media screen and (min-width:1300px) {
+    .container{
+        width: 80%;
+    }
+}
 
 @media screen and (min-width:1600px) {
     .cardetail{
         padding: 1rem;
+    }
+    .carname{
+        font-size: 20px;
     }
 }
 

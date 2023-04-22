@@ -7,17 +7,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
-}
-::-webkit-scrollbar {
-    width: 5px;
-}
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px black;
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-    background: #FFFFFF;
-    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 body{
     background-image: url('/images/background.png');
@@ -303,10 +293,13 @@ main{
 
 @media screen and (min-width:2400px) {
     body{
-        font-size: 28px;
+        font-size: 32px;
+    }
+    .fontsmall{
+        font-size: 24px;
     }
     header h1{
-        font-size: 45px;
+        font-size: 55px;
     }
     .container{
         width: 80vw;
