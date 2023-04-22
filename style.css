@@ -5,7 +5,7 @@
     -ms-user-select: none; 
     user-select: none; 
     font-family: 'Outfit', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     box-sizing: border-box;
 }
 ::-webkit-scrollbar {
@@ -23,11 +23,12 @@ body{
     background-image: url('/images/background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 1.5rem;
+    padding: 1rem;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 /* REPETITIVE STYLINGS */
 .center{
@@ -63,7 +64,7 @@ body{
     justify-content: center;
 }
 .container{
-    width: 90vw;
+    width: 80vw;
     margin: auto;
 }
 /* HEADER STYLING */
@@ -75,7 +76,7 @@ header{
     align-items: flex-end;
 }
 header h1{
-    font-size: 30px;
+    font-size: 25px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
@@ -92,7 +93,7 @@ main{
     text-align: center;
     padding: 0.5rem;
     border-radius: 18px;
-    min-height: 250px;
+    min-height: 180px;
     max-height: 40vh;
     display: flex;
     flex-direction: column;
@@ -119,7 +120,7 @@ main{
     bottom: 0.5rem;
     font-weight: 700;
     color: #3F2610;
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     padding: 0px 8px 0px 2px;
@@ -127,6 +128,9 @@ main{
     border-radius: 12px;
     background: rgba(255, 201, 62, 0.9);
     cursor: pointer;
+}
+.parkselected button img{
+    width: 2rem;
 }
 .parkoccupied{
     background: rgba(172, 52, 52, 0.08);
@@ -223,13 +227,13 @@ main{
 }
 .leftbtn{
     position: absolute;
-    left: -1rem;
+    left: -3rem;
     top: 50%;
     transform: translateY(-50%);
 }
 .rightbtn{
     position: absolute;
-    right: -1rem;
+    right: -3rem;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -252,24 +256,21 @@ main{
     main{
         gap: 1.5rem;
     }
-    header h1{
-        font-size: 35px;
+    body{
+        padding: 1.5rem;
     }
     .park{
         padding: 1rem;
-        /* min-height: 280px; */
-    }
-    .leftbtn{
-        left: -2rem;
-    }
-    .rightbtn{
-        right: -2rem;
+        min-height: 200px;
     }
 }
 
 @media screen and (min-width: 1600px) {
     *{
-        font-size: 20px;
+        font-size: 24px;
+    }
+    .fontsmall{
+        font-size:18px;
     }
     body{
         padding: 2rem;
@@ -302,7 +303,7 @@ main{
 
 @media screen and (min-width:2400px) {
     body{
-        font-size: 24px;
+        font-size: 28px;
     }
     header h1{
         font-size: 45px;
@@ -314,14 +315,14 @@ main{
         margin: 3rem auto;
     }
     .leftbtn , .rightbtn{
-        padding: 1rem 1.5rem;
+        padding: 0.8rem 1rem;
         font-size: larger;
     }
     .leftbtn{
-        left: -4rem;
+        left: -5rem;
     }
     .rightbtn{
-        right: -4rem;
+        right: -5rem;
     }
     .park{
         min-height: 30vh;

@@ -119,15 +119,21 @@ main{
     background: rgba(255, 255, 255, 0.01);
     border: 2px solid rgba(255, 255, 255, 0.05);
 }
+.normal .whitecar:hover{
+    content: url('/images/car-white-hover.png');
+}
 .normal:hover{
-
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
 }
 .gold{
     background: rgba(255, 201, 62, 0.07);
     border: 2px solid rgba(255, 201, 62, 0.1);
 }
 .gold:hover{
-
+    background: rgba(255, 201, 62, 0.12);
+    border: 2px solid rgba(255, 201, 62, 0.15);
 }
 .green{
     background: rgba(65, 204, 177, 0.07);
