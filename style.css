@@ -6,8 +6,9 @@
     user-select: none; 
     font-family: 'Outfit', sans-serif;
     font-size: 16px;
+    font-size: clamp(15px, 1vw, 2rem);
     box-sizing: border-box;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 body{
     background-image: url('/images/background.png');
@@ -26,6 +27,7 @@ body{
 }
 .fontsmall{
     font-size: 14px;
+    font-size: clamp(12px, 14px, 1vw);
 }
 .white65{
     color: rgba(255, 255, 255, 0.65);
@@ -49,7 +51,7 @@ body{
 }
 .flexgapsmall{
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
     align-items: center;
     justify-content: center;
 }
@@ -66,9 +68,13 @@ header{
     align-items: flex-end;
 }
 header h1{
-    font-size: 25px;
+    font-size: 30px;
+    font-size: clamp(2vh, 3rem, 2vw);
     letter-spacing: 0.12em;
     text-transform: uppercase;
+}
+.headerimage{
+    width: clamp(2rem, 3rem, 5rem);
 }
 /* MAIN SECTION */
 main{
@@ -83,12 +89,12 @@ main{
     text-align: center;
     padding: 0.5rem;
     border-radius: 18px;
-    min-height: 180px;
-    max-height: 40vh;
+    height: clamp(30vh, 310px, 35vh);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     cursor: pointer;
+    /* aspect-ratio: 240/310; */
 }
 .parkfree{
     background: rgba(255, 255, 255, 0.01);
@@ -154,6 +160,9 @@ main{
     justify-content: center;
     width: 100%;
 }
+.inner div img{
+    width: clamp(1.2rem, 20px, 1vw);
+}
 .parkfree .inner{
     background: rgba(255, 255, 255, 0.02);
 }
@@ -180,7 +189,6 @@ main{
 .id{
     padding: 0.5rem 1rem;
     font-weight: 700;
-    font-size: 16px;
     line-height: 103%;
     text-align: center;
     letter-spacing: 0.12em;
@@ -251,34 +259,21 @@ main{
     }
     .park{
         padding: 1rem;
-        min-height: 200px;
     }
 }
 
 @media screen and (min-width: 1600px) {
-    *{
-        font-size: 24px;
-    }
-    .fontsmall{
-        font-size:18px;
-    }
     body{
         padding: 2rem;
     }
     .container{
         width: 85vw;
     }
-    header h1{
-        font-size: 40px;
-    }
     main{
         gap: 2rem;
     }
     .leftbtn , .rightbtn{
         padding: 0.5rem 0.8rem;
-    }
-    .park{
-        min-height: 310px;
     }
     .parkselected button{
         bottom: 1rem;
@@ -294,12 +289,6 @@ main{
 @media screen and (min-width:2400px) {
     body{
         font-size: 32px;
-    }
-    .fontsmall{
-        font-size: 24px;
-    }
-    header h1{
-        font-size: 55px;
     }
     .container{
         width: 80vw;
@@ -317,34 +306,4 @@ main{
     .rightbtn{
         right: -5rem;
     }
-    .park{
-        min-height: 30vh;
-    }
-}
-
-/* GARAGE STYLING */
-.garage-search{
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
-    border-radius: 18px;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-}
-.search{
-    background: transparent;
-    width: 100%;
-    border: none;
-    outline: none;
-}
-.search::placeholder{
-    font-size: 14px;
-    font-weight: 600;
-}
-.filter{
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.65);
-    padding: 0.4rem 1rem;
 }
