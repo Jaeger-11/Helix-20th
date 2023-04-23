@@ -6,7 +6,7 @@
     user-select: none; 
     font-family: 'Outfit', sans-serif;
     font-size: 16px;
-    font-size: clamp(15px, 1vw, 2rem);
+    font-size: clamp(15px, 1vw, 2vw);
     box-sizing: border-box;
     transition: all 0.2s ease;
 }
@@ -27,7 +27,7 @@ body{
 }
 .fontsmall{
     font-size: 14px;
-    font-size: clamp(12px, 14px, 1vw);
+    font-size: clamp(14px, 1vh, 1vw);
 }
 .white65{
     color: rgba(255, 255, 255, 0.65);
@@ -56,7 +56,7 @@ body{
     justify-content: center;
 }
 .container{
-    width: 80vw;
+    width: max-content; /* changed from vw width to max-content*/
     margin: auto;
 }
 /* HEADER STYLING */
@@ -76,6 +76,9 @@ header h1{
 .headerimage{
     width: clamp(2rem, 3rem, 5rem);
 }
+.headerheading{
+    font-size: clamp(20px, 1.5vw, 2vw);
+}
 /* MAIN SECTION */
 main{
     margin: 1rem auto;
@@ -94,7 +97,7 @@ main{
     flex-direction: column;
     gap: 0.5rem;
     cursor: pointer;
-    /* aspect-ratio: 240/310; */
+    aspect-ratio: 240/310;
 }
 .parkfree{
     background: rgba(255, 255, 255, 0.01);
@@ -116,17 +119,17 @@ main{
     bottom: 0.5rem;
     font-weight: 700;
     color: #3F2610;
-    font-size: 14px;
+    font-size: clamp(14px, 0.8rem, 2rem);
     display: flex;
     align-items: center;
-    padding: 0px 8px 0px 2px;
+    padding: 0px 0.5rem 0 0.2rem;
     border: none;
     border-radius: 12px;
     background: rgba(255, 201, 62, 0.9);
     cursor: pointer;
 }
 .parkselected button img{
-    width: 2rem;
+    width: clamp(2rem, 3rem, 2vw);
 }
 .parkoccupied{
     background: rgba(172, 52, 52, 0.08);
@@ -137,9 +140,9 @@ main{
     border: 2px solid rgba(172, 52, 52, 0.45);
 }
 .dash{
-    width: 100px;
+    width: 50%;
     margin: 0 auto 5px auto;
-    height: 6px;
+    height: 5px;
     border-radius: 2px;
 }
 .dashfree{
@@ -160,8 +163,8 @@ main{
     justify-content: center;
     width: 100%;
 }
-.inner div img{
-    width: clamp(1.2rem, 20px, 1vw);
+.icons{
+    width: clamp(1.2rem, 1vw, 2vw);
 }
 .parkfree .inner{
     background: rgba(255, 255, 255, 0.02);
@@ -223,15 +226,18 @@ main{
     font-weight: 600;
     font-size: 16px;
 }
+.leftbtn img, .rightbtn img{
+    width: clamp(0.5vw, 8px, 1vw);
+}
 .leftbtn{
     position: absolute;
-    left: -3rem;
+    left: -5vw;
     top: 50%;
     transform: translateY(-50%);
 }
 .rightbtn{
     position: absolute;
-    right: -3rem;
+    right: -5vw;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -260,29 +266,23 @@ main{
     .park{
         padding: 1rem;
     }
+    .fontsmall{
+        font-size: clamp(14px, 16px, 2rem);
+    }
+    /* .container{
+        width: 80vw;
+    } */
 }
 
 @media screen and (min-width: 1600px) {
     body{
         padding: 2rem;
     }
-    .container{
-        width: 85vw;
-    }
-    main{
-        gap: 2rem;
-    }
-    .leftbtn , .rightbtn{
-        padding: 0.5rem 0.8rem;
-    }
-    .parkselected button{
-        bottom: 1rem;
-    }
-    .leftbtn{
-        left: -3rem;
-    }
-    .rightbtn{
-        right: -3rem;
+    /* .container{
+        width: 70vw;
+    } */
+    .fontsmall{
+        font-size: clamp(20px, 1vw, 2vw);
     }
 }
 
@@ -290,20 +290,7 @@ main{
     body{
         font-size: 32px;
     }
-    .container{
-        width: 80vw;
-    }
-    main{
-        margin: 3rem auto;
-    }
     .leftbtn , .rightbtn{
-        padding: 0.8rem 1rem;
         font-size: larger;
-    }
-    .leftbtn{
-        left: -5rem;
-    }
-    .rightbtn{
-        right: -5rem;
     }
 }
