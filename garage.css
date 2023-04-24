@@ -108,13 +108,13 @@ header{
     color: #0B463B;
     box-shadow: 0px 0px 20px rgba(65, 204, 177, 0.25);
 }
-
-/* YET TO FIX THE ALIGNMENT ISSUE */
 .filter:active::before{
     background: #177261;
     content: "";
     display: block;
-    width: 70%;
+    max-width: 100%;
+    right: 15%;
+    left: 15%;
     height: 0.2rem;
     position: absolute;
     top: -0.2rem;
@@ -123,7 +123,9 @@ header{
     background: #177261;
     content: "";
     display: block;
-    width: 70%;
+    max-width: 100%;
+    right: 15%;
+    left: 15%;
     height: 0.2rem;
     position: absolute;
     bottom: -0.2rem;
