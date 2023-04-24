@@ -188,7 +188,6 @@ header{
     border: none;
     border-radius: 12px;
     background: rgba(255, 201, 62, 0.9);
-    cursor: pointer;
 }
 .green button img{
     width: clamp(2rem, 2vw, 3vw);
