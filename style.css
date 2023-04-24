@@ -166,7 +166,7 @@ main{
 .parkfree .inner{
     background: rgba(255, 255, 255, 0.02);
 }
-.parkfree .inner:hover{
+.parkfree:hover .inner{
     background: rgba(255, 255, 255, 0.08);
 }
 .parkselected .inner{
@@ -174,7 +174,7 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.parkselected .inner:hover{
+.parkselected:hover .inner{
     background-image: url(/images/pattern-green-hover.png), url(/images/green-dashed.png);
 }
 .parkoccupied .inner{
@@ -183,7 +183,7 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.parkoccupied .inner:hover{
+.parkoccupied:hover .inner{
     background-image: url(/images/pattern-red-hover.png);
 }
 .id{
