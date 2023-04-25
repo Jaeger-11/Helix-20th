@@ -94,6 +94,7 @@ main{
     padding: 0.5rem;
     border-radius: 18px;
     height: clamp(30vh, 310px, 35vh);
+    width: clamp(15vw, 240px, 20vh);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -249,8 +250,8 @@ main{
 }
 .escape{
     position: absolute;
-    right: 0;
-    bottom: 0.5rem;
+    right: 5vw;
+    bottom: 1.5rem;
 }
 .esc{
     padding: 0.2rem 0.5rem;
@@ -266,6 +267,12 @@ main{
     .park{
         padding: 1rem;
     }
+}
+
+@media screen and (min-width:1600px){
+    /* .container{
+        max-width: 80vw;
+    } */
 }
 
 @media screen and (min-width:2400px) {

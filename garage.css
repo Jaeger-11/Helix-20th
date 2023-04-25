@@ -69,7 +69,7 @@ main{
 
 /* GARAGE STYLING */
 header{
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 .garage-search{
@@ -139,7 +139,7 @@ header{
 }
 .cardetail{
     position: relative;
-    padding: clamp(0.5rem, 0.7vw, 1.5vw);
+    padding: clamp(0.5rem, 0.7vw, 1.5rem);
     box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
     border-radius: 18px;
     cursor: pointer;
@@ -226,13 +226,13 @@ header{
         margin: 1rem auto;
     }
     .filters{
-        margin-left: 1rem;
+        margin: auto 1rem;
     }
     .filter{
         padding: 0.5rem 1.5rem;
     }
     .tabs{
-        bottom: 1.2rem;
+        bottom: 1.5rem;
     }
 }
 
@@ -249,11 +249,17 @@ header{
     .container{
         width: 75vw;
     }
+    main{
+        margin: 2rem auto;
+    }
+    .filters{
+        margin: 1rem;
+    }
 }
 
 @media screen and (min-width:2400px) {
     main{
-        margin: 2rem auto;
+        margin: 2.5rem auto;
     }
     .star{
         width: 1.2rem;
