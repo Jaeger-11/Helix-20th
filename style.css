@@ -11,14 +11,17 @@
     transition: all 0.2s ease;
 }
 body{
-    background-image: url('/images/background.png');
+    background-image: url('/images/bgoriginal.png');
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+}
+.bgcontainer{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
 }
 /* REPETITIVE STYLINGS */
 .center{
@@ -170,21 +173,21 @@ main{
     background: rgba(255, 255, 255, 0.08);
 }
 .parkselected .inner{
-    background-image: url(/images/pattern-green.png), url(/images/green-dashed.png);
+    background-image: url(/images/pattern-green.svg), url(/images/green-dashed.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .parkselected:hover .inner{
-    background-image: url(/images/pattern-green-hover.png), url(/images/green-dashed.png);
+    background-image: url(/images/pattern-green-hover.svg), url(/images/green-dashed.svg);
 }
 .parkoccupied .inner{
     border: 2px solid rgba(172, 52, 52, 0.05);
-    background-image: url(/images/pattern-red.png);
+    background-image: url(/images/pattern-red.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .parkoccupied:hover .inner{
-    background-image: url(/images/pattern-red-hover.png);
+    background-image: url(/images/pattern-red-hover.svg);
 }
 .id{
     padding: 0.5rem 1rem;
@@ -221,9 +224,13 @@ main{
     transform: translateY(-50%);
     font-weight: 600;
     font-size: 16px;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
 }
 .leftbtn img, .rightbtn img{
-    width: clamp(0.5vw, 8px, 1vw);
+    width: clamp(0.5rem, 8px, 12px);
 }
 .leftbtn{
     position: absolute;
