@@ -1,4 +1,6 @@
-const parks = document.querySelector('#parks')
+const parks = document.querySelector('#parks');
+const freeplaces = document.querySelector('#freeplaces');
+const walletvalue = document.querySelector('#walletvalue');
 
 const parkingData = [
     {
@@ -73,4 +75,31 @@ const pushParksData = ( data ) => {
     })
 }
 
+const setWalletValue = (value) => {
+    walletvalue.textContent = value;
+}
+const setFreePlaces = (value) => {
+    freeplaces.textContent = value;
+}
+
+document.addEventListener('keydown', evt => {
+    if (evt.key === 'Escape') {
+        alert('Escape pressed');
+    }
+});
+
+document.addEventListener('keydown', evt => {
+    if (evt.key === 'q') {
+        alert('Q pressed');
+    }
+});
+
+document.addEventListener('keydown', evt => {
+    if (evt.key === 'e') {
+        alert('E pressed');
+    }
+});
+
 pushParksData(parkingData);
+setWalletValue('130.000');
+setFreePlaces('832');

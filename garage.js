@@ -1,4 +1,8 @@
 const garage = document.querySelector('#garage');
+const searchCars = document.querySelector('#search');
+const all = document.querySelector('#all');
+const favorites = document.querySelector('#favorites');
+const legendary = document.querySelector('#legendary');
 
 const garageData = [
     {
@@ -65,5 +69,9 @@ const pushGarageCars = ( data ) => {
         `
     })
 }
+
+searchCars.addEventListener('change', () => {
+    console.log(searchCars.value)
+})
 
 pushGarageCars(garageData)

@@ -57,7 +57,7 @@ body{
     justify-content: center;
 }
 .container{
-    width: max-content; /* changed from vw width to max-content*/
+    max-width: max-content; /* changed from vw width to max-content*/
     margin: auto;
 }
 /* HEADER STYLING */
@@ -91,15 +91,15 @@ main{
 }
 .park{
     text-align: center;
-    padding: 0.5rem;
+    padding: clamp(7px, 0.5vw, 25px);
     border-radius: 18px;
-    height: clamp(25vh, 310px, 35vh);
-    width: clamp(15vw, 240px, 20vh);
+    height: clamp(150px, 35vh, 2000px);
+    /* width: clamp(15vw, 240px, 20vh); */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     cursor: pointer;
-    /* aspect-ratio: 240/310; */
+    aspect-ratio: 240/310;
 }
 .parkfree{
     background: rgba(255, 255, 255, 0.01);
@@ -236,13 +236,13 @@ main{
 }
 .leftbtn{
     position: absolute;
-    left: -5vw;
+    left: -5%;
     top: 50%;
     transform: translateY(-50%);
 }
 .rightbtn{
     position: absolute;
-    right: -5vw;
+    right: -5%;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -252,7 +252,7 @@ main{
 .escape{
     position: absolute;
     right: 5vw;
-    bottom: 1.5rem;
+    bottom: clamp(1rem, 1.5vh, 3rem);
 }
 .esc{
     padding: 0.2vw 0.5vw;
@@ -268,12 +268,6 @@ main{
     .park{
         padding: 1rem;
     }
-}
-
-@media screen and (min-width:1600px){
-    /* .container{
-        max-width: 80vw;
-    } */
 }
 
 @media screen and (min-width:2400px) {
