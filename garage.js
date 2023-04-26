@@ -59,6 +59,7 @@ const pushGarageCars = ( data ) => {
                 <div>
                     <h4 class="font600 carname">${name}</h4>
                     <p class="white65 description">${description}</p>
+                    ${ status === 'green' ? `<button><img src="/images/long-arrow-left.svg" alt="arrow left"> SELECT </button>` : ''}
                 </div>
             </section>
         `
