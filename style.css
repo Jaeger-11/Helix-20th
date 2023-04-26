@@ -93,13 +93,13 @@ main{
     text-align: center;
     padding: 0.5rem;
     border-radius: 18px;
-    height: clamp(30vh, 310px, 35vh);
+    height: clamp(25vh, 310px, 35vh);
     width: clamp(15vw, 240px, 20vh);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     cursor: pointer;
-    aspect-ratio: 240/310;
+    /* aspect-ratio: 240/310; */
 }
 .parkfree{
     background: rgba(255, 255, 255, 0.01);
@@ -124,7 +124,7 @@ main{
     font-size: clamp(14px, 0.8rem, 2rem);
     display: flex;
     align-items: center;
-    padding: 0px 0.5rem 0 0.2rem;
+    padding: 0px 0.5vw 0 0.2vw;
     border: none;
     border-radius: 12px;
     background: rgba(255, 201, 62, 0.9);
@@ -191,7 +191,7 @@ main{
     background-image: url(/images/pattern-red-hover.svg);
 }
 .id{
-    padding: 0.5rem 1rem;
+    padding: 0.7vh 0.7vw;
     font-weight: 700;
     line-height: 103%;
     text-align: center;
@@ -221,7 +221,7 @@ main{
     border: 3px solid black;
     border-radius: 11px;
     background-color: white;
-    padding: 0.3rem 0.5rem;
+    padding: 0.3vw 0.5vw;
     transform: translateY(-50%);
     font-weight: 600;
     font-size: 16px;
@@ -254,7 +254,7 @@ main{
     bottom: 1.5rem;
 }
 .esc{
-    padding: 0.2rem 0.5rem;
+    padding: 0.2vw 0.5vw;
     box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.75);
     border-radius: 8px;
     border: none;
