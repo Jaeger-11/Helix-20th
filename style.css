@@ -146,13 +146,13 @@ main{
     height: 5px;
     border-radius: 2px;
 }
-.dashfree{
+.parkfree .dash{
     background: rgba(255, 255, 255, 0.11);
 }
-.dashselected{
+.parkselected .dash{
     background: rgba(0, 217, 178, 0.35);
 }
-.dashoccupied{
+.parkoccupied .dash{
     background: rgba(172, 52, 52, 0.25);
 }
 .inner{
@@ -163,6 +163,7 @@ main{
     align-items: center;
     justify-content: center;
     width: 100%;
+    text-transform: uppercase;
 }
 .icons{
     width: clamp(1.2rem, 1vw, 2vw);
@@ -205,15 +206,15 @@ main{
     transform: translateX(50%);
     text-shadow: 0px 0px 88px rgba(255, 255, 255, 0.15);
 }
-.idfree{
+.parkfree .id{
     background: rgba(255, 255, 255, 0.05);
     color: rgba(255, 255, 255, 0.65);
 }
-.idselected{
+.parkselected .id{
     background: #41CCB1;
     color: #0B463B;
 }
-.idoccupied{
+.parkoccupied .id{
     background-color: #2B0D0B;
     color: rgba(172, 52, 52, 0.65);
 }
