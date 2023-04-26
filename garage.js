@@ -56,6 +56,8 @@ const pushGarageCars = ( data ) => {
     data.map((item) => {
         const { name, description, status } = item;
 
+        // THE IMAGES DISPLAYED DEPENDS ON THE STATUS GIVEN DIRECTLY
+
         garage.innerHTML += `
             <section class="flexgapsmall cardetail ${status}">
                 <img src="/images/${status === 'gold' ? `star-gold.svg` : 'star.svg'}" alt="star" class="star">
@@ -69,6 +71,18 @@ const pushGarageCars = ( data ) => {
         `
     })
 }
+
+document.addEventListener('keydown', evt => {
+    if (evt.key === 'Escape') {
+        alert('Escape pressed');
+    }
+});
+
+document.addEventListener("mousedown", function(event) {
+    if (event.button === 0) {
+      alert('left mouse button clicked')
+    }
+  });
 
 searchCars.addEventListener('change', () => {
     console.log(searchCars.value)

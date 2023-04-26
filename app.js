@@ -58,6 +58,7 @@ const parkingData = [
 const pushParksData = ( data ) => {
     data.map((item) => {
         const { id, cost, status } = item;
+        // THE STYLING HERE RELIES DIRECTLY ON THE STATUS IN THE DATA
 
         parks.innerHTML += `
             <section class='park park${status}'>
@@ -81,7 +82,7 @@ const setWalletValue = (value) => {
 const setFreePlaces = (value) => {
     freeplaces.textContent = value;
 }
-
+// IS THERE ANYTHING ELSE I SHOULD ADD TO THE KEYPRESS FUNCTIONS
 document.addEventListener('keydown', evt => {
     if (evt.key === 'Escape') {
         alert('Escape pressed');
