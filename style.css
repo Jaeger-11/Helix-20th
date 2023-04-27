@@ -89,6 +89,9 @@ main{
     justify-content: center;
     position: relative;
 }
+.parkcontainer{
+    position: relative;
+}
 .park{
     text-align: center;
     padding: clamp(7px, 0.5vw, 25px);
