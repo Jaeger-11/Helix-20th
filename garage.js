@@ -4,60 +4,101 @@ const all = document.querySelector('#all');
 const favorites = document.querySelector('#favorites');
 const legendary = document.querySelector('#legendary');
 
-const garageData = [
+let garageData = [
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'normal'
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category: ["electric", "pickup"]
     },
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'normal'
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category: ["sports"]
     },
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'normal'
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category: ["crossovers", "muscle"]
     },
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'gold'
+        status: 'gold',
+        favorite: true,
+        legendary: false,
+        category: ["sports", "electric"]
     },
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'normal'
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category: ["pickup", "muscle"]
     },
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'green'
+        status: 'green',
+        favorite: false,
+        legendary: true,
+        category: ["crossovers", "muscle", "electric"]
     },
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'gold'
+        status: 'gold',
+        favorite: true,
+        legendary: false,
+        category:["sport", "crossovers"]
     },
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'normal'
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category:["muscle", "electric"]
     },
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'normal'
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category: ["crossovers", "electric"]
     },
 ]
 
+legendary.addEventListener('click', () => {
+    let data = garageData.filter((item) => item.legendary === true )
+    pushGarageCars(data)
+})
+
+favorites.addEventListener('click', () => {
+    let data = garageData.filter((item) => item.favorite)
+    pushGarageCars(data)
+})
+
+all.addEventListener('click', () => {
+    pushGarageCars(garageData)
+})
+
 const pushGarageCars = ( data ) => {
+    garage.innerHTML = ''
     data.map((item) => {
         const { name, description, status } = item;
 
         // THE IMAGES DISPLAYED DEPENDS ON THE STATUS GIVEN DIRECTLY
-
         garage.innerHTML += `
             <section class="flexgapsmall cardetail ${status}">
                 <img src="/images/${status === 'gold' ? `star-gold.svg` : 'star.svg'}" alt="star" class="star">
@@ -80,7 +121,7 @@ document.addEventListener('keydown', evt => {
 
 document.addEventListener("mousedown", function(event) {
     if (event.button === 0) {
-      alert('left mouse button clicked')
+      console.log('left mouse button clicked')
     }
   });
 
