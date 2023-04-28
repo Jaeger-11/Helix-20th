@@ -9,6 +9,17 @@
     box-sizing: border-box;
     transition: all 0.3s ease;
 }
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 5px;
+}
 body{
     background-image: url('/images/bgoriginal.png');
     background-repeat: no-repeat;
@@ -33,17 +44,17 @@ body{
 }
 main{
     margin: 0.5rem auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: center;
     position: relative;
+    height: 60vh;
+    overflow-y: scroll;
 }
 .center{
     text-align: center;
 }
 .fontsmall{
-    font-size: 14px;
     font-size: clamp(12px, 1vw, 30px);
 }
 .white65{
@@ -106,9 +117,10 @@ header{
     border-radius: 12px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.65);
-    padding: 0.2rem 1rem;
+    padding: 0.5rem 1rem;
     position: relative;
     cursor: pointer;
+    margin-left: 0.5rem;
 }
 .filter:hover{
     background: rgba(255, 255, 255, 0.22);
@@ -146,9 +158,27 @@ header{
     box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
     border-radius: 18px;
     cursor: pointer;
+    height: max-content;
+    width: 32.5%;
+}
+.carbox{
+    position: relative;
+    width: 50%;
 }
 .whitecar{
-    width: 50%;
+    width: 100%;
+}
+.rectangle{
+    position: absolute;
+    width: 6vw;
+    height: 6vw;
+    top: 10%;
+    left: 10%;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    z-index: -10;
+    transform: rotate(45deg);
 }
 .star{
     position: absolute;
@@ -160,29 +190,35 @@ header{
     background: rgba(255, 255, 255, 0.01);
     border: 2px solid rgba(255, 255, 255, 0.05);
 }
-.normal:hover .whitecar{
-    content: url('/images/car-normal-hover.svg');
-}
 .normal:hover{
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(255, 255, 255, 0.07);
     box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
 }
+.normal:hover .rectangle{
+    background: rgba(255, 255, 255, 0.45);
+}
 .gold{
     background: rgba(255, 201, 62, 0.07);
     border: 2px solid rgba(255, 201, 62, 0.1);
 }
-.gold:hover .whitecar{
-    content: url('/images/car-gold-hover.svg');
+.gold .rectangle{
+    background: rgba(255, 201, 62, 0.15);
 }
 .gold:hover{
     background: rgba(255, 201, 62, 0.12);
     border: 2px solid rgba(255, 201, 62, 0.15);
 }
+.gold:hover .rectangle{
+    background: rgba(255, 201, 62, 0.25);
+}
 .green{
     background: rgba(65, 204, 177, 0.07);
     border: 2px dashed rgba(65, 204, 177, 0.15);
     color: rgba(65, 204, 177, 0.65);
+}
+.green .rectangle{
+    background: #41CCB1;
 }
 .green .white65{
     color: rgba(65, 204, 177, 0.65);
@@ -205,6 +241,7 @@ header{
 .carname{
     font-size: clamp(16px, 1.2vw, 2vw);
     text-transform: capitalize;
+    line-height: 110%;
 }
 .description{
     font-size: clamp(12px, 1vw, 2vw);
@@ -213,14 +250,15 @@ header{
 .tabs{
     position: absolute;
     right: 5vw;
-    bottom: 0.7rem;
+    bottom: 0.5rem;
 }
 .esc{
-    padding: 0.2vw 0.5vw;
+    padding: 0.3vw 0.5vw;
     box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.75);
     border-radius: 8px;
     border: none;
     font-weight: 600;
+    line-height: 100%;
 }
 @media screen and (min-width:1300px) {
     .container{
@@ -229,14 +267,8 @@ header{
     main{
         margin: 1rem auto;
     }
-    .filters{
-        margin: auto 1rem;
-    }
-    .filter{
-        padding: 0.5rem 1.5rem;
-    }
     .tabs{
-        bottom: 1.5rem;
+        bottom: 1rem;
     }
 }
 
@@ -255,9 +287,6 @@ header{
     }
     main{
         margin: 2rem auto;
-    }
-    .filters{
-        margin: 1rem;
     }
 }
 

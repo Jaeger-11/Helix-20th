@@ -3,6 +3,11 @@ const searchCars = document.querySelector('#search');
 const all = document.querySelector('#all');
 const favorites = document.querySelector('#favorites');
 const legendary = document.querySelector('#legendary');
+const electric = document.querySelector('#electric');
+const sports = document.querySelector('#sports');
+const pickup = document.querySelector('#pickup');
+const muscle = document.querySelector('#muscle');
+const crossovers = document.querySelector('#crossovers');
 
 let garageData = [
     {
@@ -11,7 +16,8 @@ let garageData = [
         status: 'normal',
         favorite: false,
         legendary: false,
-        category: ["electric", "pickup"]
+        category: ["electric", "pickup"],
+        imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
         name: 'chevrolet camaro',
@@ -19,7 +25,8 @@ let garageData = [
         status: 'normal',
         favorite: false,
         legendary: false,
-        category: ["sports"]
+        category: ["sports"],
+        imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
         name: 'chevrolet camaro',
@@ -27,7 +34,8 @@ let garageData = [
         status: 'normal',
         favorite: false,
         legendary: false,
-        category: ["crossovers", "muscle"]
+        category: ["crossovers", "muscle"],
+        imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
         name: 'chevrolet camaro',
@@ -35,7 +43,8 @@ let garageData = [
         status: 'gold',
         favorite: true,
         legendary: false,
-        category: ["sports", "electric"]
+        category: ["sports", "electric"],
+        imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
         name: 'chevrolet camaro',
@@ -43,7 +52,8 @@ let garageData = [
         status: 'normal',
         favorite: false,
         legendary: false,
-        category: ["pickup", "muscle"]
+        category: ["pickup", "muscle"],
+        imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
         name: 'chevrolet camaro',
@@ -51,7 +61,8 @@ let garageData = [
         status: 'green',
         favorite: false,
         legendary: true,
-        category: ["crossovers", "muscle", "electric"]
+        category: ["crossovers", "muscle", "electric"],
+        imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
         name: 'chevrolet camaro',
@@ -59,7 +70,8 @@ let garageData = [
         status: 'gold',
         favorite: true,
         legendary: false,
-        category:["sport", "crossovers"]
+        category:["sports", "crossovers"],
+        imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
         name: 'chevrolet camaro',
@@ -67,7 +79,8 @@ let garageData = [
         status: 'normal',
         favorite: false,
         legendary: false,
-        category:["muscle", "electric"]
+        category:["muscle", "electric"],
+        imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
         name: 'chevrolet camaro',
@@ -75,12 +88,87 @@ let garageData = [
         status: 'normal',
         favorite: false,
         legendary: false,
-        category: ["crossovers", "electric"]
+        category: ["crossovers", "electric"],
+        imageUrl: '/images/chevrolet-camaro.svg'
+    },
+    {
+        name: 'chevrolet camaro',
+        description: 'Some short description of this car',
+        status: 'gold',
+        favorite: true,
+        legendary: false,
+        category:["sports", "crossovers"],
+        imageUrl: '/images/chevrolet-camaro.svg'
+    },
+    {
+        name: 'chevrolet camaro',
+        description: 'Some short description of this car',
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category:["muscle", "electric"],
+        imageUrl: '/images/chevrolet-camaro.svg'
+    },
+    {
+        name: 'chevrolet camaro',
+        description: 'Some short description of this car',
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category: ["crossovers", "electric"],
+        imageUrl: '/images/chevrolet-camaro.svg'
+    },
+    {
+        name: 'chevrolet camaro',
+        description: 'Some short description of this car',
+        status: 'gold',
+        favorite: true,
+        legendary: false,
+        category:["sports", "crossovers"],
+        imageUrl: '/images/chevrolet-camaro.svg'
+    },
+    {
+        name: 'chevrolet camaro',
+        description: 'Some short description of this car',
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category:["muscle", "electric"],
+        imageUrl: '/images/chevrolet-camaro.svg'
+    },
+    {
+        name: 'chevrolet camaro',
+        description: 'Some short description of this car',
+        status: 'normal',
+        favorite: false,
+        legendary: false,
+        category: ["crossovers", "electric"],
+        imageUrl: '/images/chevrolet-camaro.svg'
     },
 ]
 
-legendary.addEventListener('click', () => {
-    let data = garageData.filter((item) => item.legendary === true )
+electric.addEventListener('click', () => {
+    let data = garageData.filter((item) => item.category.includes('electric') )
+    pushGarageCars(data)
+})
+
+sports.addEventListener('click', () => {
+    let data = garageData.filter((item) => item.category.includes('sports') )
+    pushGarageCars(data)
+})
+
+pickup.addEventListener('click', () => {
+    let data = garageData.filter((item) => item.category.includes('pickup') )
+    pushGarageCars(data)
+})
+
+muscle.addEventListener('click', () => {
+    let data = garageData.filter((item) => item.category.includes('muscle') )
+    pushGarageCars(data)
+})
+
+crossovers.addEventListener('click', () => {
+    let data = garageData.filter((item) => item.category.includes('crossovers') )
     pushGarageCars(data)
 })
 
@@ -96,13 +184,16 @@ all.addEventListener('click', () => {
 const pushGarageCars = ( data ) => {
     garage.innerHTML = ''
     data.map((item) => {
-        const { name, description, status } = item;
+        const { name, description, status, imageUrl } = item;
 
         // THE IMAGES DISPLAYED DEPENDS ON THE STATUS GIVEN DIRECTLY
         garage.innerHTML += `
             <section class="flexgapsmall cardetail ${status}">
                 <img src="/images/${status === 'gold' ? `star-gold.svg` : 'star.svg'}" alt="star" class="star">
-                <img src="/images/car-${status}.svg" alt="white car" class="whitecar">
+                <div class="carbox"> 
+                    <div class="rectangle"> </div>
+                    <img src=${imageUrl} alt="white car" class="whitecar">
+                </div>
                 <div>
                     <h4 class="font600 carname">${name}</h4>
                     <p class="white65 description">${description}</p>
