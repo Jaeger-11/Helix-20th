@@ -172,9 +172,11 @@ main{
 }
 .rectangle{
     position: absolute;
-    width: 6vw;
-    height: 6vw;
-    top: 10%;
+    width: 5vw;
+    height: 5vw;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     left: 10%;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
