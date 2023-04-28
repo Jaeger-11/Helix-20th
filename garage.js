@@ -2,12 +2,13 @@ const garage = document.querySelector('#garage');
 const searchCars = document.querySelector('#search');
 const all = document.querySelector('#all');
 const favorites = document.querySelector('#favorites');
-const legendary = document.querySelector('#legendary');
 const electric = document.querySelector('#electric');
 const sports = document.querySelector('#sports');
 const pickup = document.querySelector('#pickup');
 const muscle = document.querySelector('#muscle');
 const crossovers = document.querySelector('#crossovers');
+
+const filters = [all, favorites, electric, sports, pickup, muscle, crossovers];
 
 let garageData = [
     {
@@ -146,6 +147,14 @@ let garageData = [
         imageUrl: '/images/chevrolet-camaro.svg'
     },
 ]
+
+filters.map((item) => {
+    item.addEventListener('click', () => {
+        item.classList.add('filteractive')
+        const restFilters = filters.filter((filt) => filt !== item)
+        restFilters.map((i) => i.classList.remove('filteractive'))
+    })
+})
 
 electric.addEventListener('click', () => {
     let data = garageData.filter((item) => item.category.includes('electric') )

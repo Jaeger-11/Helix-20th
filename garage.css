@@ -42,15 +42,6 @@ body{
     width: 95vw;
     margin: auto;
 }
-main{
-    margin: 0.5rem auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    position: relative;
-    height: 60vh;
-    overflow-y: scroll;
-}
 .center{
     text-align: center;
 }
@@ -89,7 +80,7 @@ header{
     box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
     border-radius: 18px;
     padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 .garage-search:hover{
     background: rgba(255, 255, 255, 0.05);
@@ -125,12 +116,12 @@ header{
 .filter:hover{
     background: rgba(255, 255, 255, 0.22);
 }
-.filter:active{
+.filteractive{
     background: #41CCB1;
     color: #0B463B;
     box-shadow: 0px 0px 20px rgba(65, 204, 177, 0.25);
 }
-.filter:active::before{
+.filteractive::before{
     background: #177261;
     content: "";
     display: block;
@@ -141,7 +132,7 @@ header{
     position: absolute;
     top: -0.2rem;
 }
-.filter:active::after{
+.filteractive::after{
     background: #177261;
     content: "";
     display: block;
@@ -151,6 +142,17 @@ header{
     height: 0.2rem;
     position: absolute;
     bottom: -0.2rem;
+}
+.garagecontainer{
+    height: 60vh;
+    overflow-y: scroll;
+    margin: 1rem auto;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    position: relative;    
 }
 .cardetail{
     position: relative;
@@ -264,8 +266,8 @@ header{
     .container{
         width: 80%;
     }
-    main{
-        margin: 1rem auto;
+    .garagecontainer{
+        margin: 2rem auto;
     }
     .tabs{
         bottom: 1rem;
@@ -286,13 +288,13 @@ header{
         width: 75vw;
     }
     main{
-        margin: 2rem auto;
+        margin: 3rem auto;
     }
 }
 
 @media screen and (min-width:2400px) {
-    main{
-        margin: 2.5rem auto;
+    .garagecontainer{
+        margin: 2rem auto;
     }
     .star{
         width: 1.2rem;
