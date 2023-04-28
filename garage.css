@@ -266,9 +266,6 @@ main{
     .container{
         width: 80%;
     }
-    .garagecontainer{
-        margin: 2rem auto;
-    }
     .tabs{
         bottom: 1rem;
     }
@@ -286,9 +283,6 @@ main{
     }
     .container{
         width: 75vw;
-    }
-    main{
-        margin: 3rem auto;
     }
 }
 

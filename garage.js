@@ -221,7 +221,7 @@ document.addEventListener('keydown', evt => {
 
 document.addEventListener("mousedown", function(event) {
     if (event.button === 0) {
-      console.log('left mouse button clicked')
+    //   console.log('left mouse button clicked')
     }
   });
 
