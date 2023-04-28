@@ -5,10 +5,10 @@
     -ms-user-select: none; 
     user-select: none; 
     font-family: 'Outfit', sans-serif;
-    font-size: 16px;
     font-size: clamp(15px, 1vw, 2vw);
     box-sizing: border-box;
     transition: all 0.2s ease;
+    line-height: 100%;
 }
 body{
     background-image: url('/images/bgoriginal.png');

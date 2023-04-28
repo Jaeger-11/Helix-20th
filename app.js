@@ -287,8 +287,6 @@ document.addEventListener('keydown', evt => {
     }
 });
 
-console.log(min, max)
-
 pushParksData(parkingData);
 setWalletValue('130.000');
 setFreePlaces('832');
