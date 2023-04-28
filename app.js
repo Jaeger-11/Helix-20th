@@ -239,7 +239,9 @@ const pushParksData = ( data ) => {
                     <p class="id"> ${id} </p>
                     <div>
                         <p class="white65 font600">${status}</p>
-                        <div class="flexgapsmall font600"> ${cost} <img src="/images/lix-yellow.svg" alt="lix-yellow" class="icons"> </div>
+                        ${ status === 'occupied' ? `<div class="flexgapsmall font600"> <img src="/images/lock.svg" alt="lock" class="icons"> </div>` :
+                        `<div class="flexgapsmall font600"> ${cost} <img src="/images/lix-yellow.svg" alt="lix-yellow" class="icons"> </div>
+                        `}
                     </div>
                     ${status === 'selected' ? `<button> <img src="/images/long-arrow-left.svg" alt="arrow left"> BUY </button>` : '' }
                 </div>

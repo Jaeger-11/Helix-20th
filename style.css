@@ -8,7 +8,7 @@
     font-size: clamp(15px, 1vw, 2vw);
     box-sizing: border-box;
     transition: all 0.2s ease;
-    line-height: 100%;
+    line-height: 110%;
 }
 body{
     background-image: url('/images/bgoriginal.png');
