@@ -101,11 +101,14 @@ body{
     color: white;
 }
 .bgcontainer{
+    background: rgba(0, 0, 0, 0.84);
+}
+.glowcontainer{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
+    background: url(/images/glow-top-left.svg) top left no-repeat, url(/images/glow-bottom-right.svg) bottom right no-repeat;
 }
 /* REPETITIVE STYLINGS */
 .center{
