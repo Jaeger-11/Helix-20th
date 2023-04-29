@@ -7,56 +7,57 @@ const sports = document.querySelector('#sports');
 const pickup = document.querySelector('#pickup');
 const muscle = document.querySelector('#muscle');
 const crossovers = document.querySelector('#crossovers');
-const star = document.querySelector('.star');
+// const star = document.querySelector('.star');
 const filters = [all, favorites, electric, sports, pickup, muscle, crossovers];
 
 let garageData = [
     {
+        carId:"1",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category: ["electric", "pickup"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"2",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category: ["sports"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"3",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category: ["crossovers", "muscle"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"4",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'favorite',
         favorite: true,
-        legendary: false,
         category: ["sports", "electric"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"5",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category: ["pickup", "muscle"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"6",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'select',
@@ -66,83 +67,83 @@ let garageData = [
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"7",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'favorite',
         favorite: true,
-        legendary: false,
         category:["sports", "crossovers"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"8",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category:["muscle", "electric"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"9",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category: ["crossovers", "electric"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"10",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'favorite',
         favorite: true,
-        legendary: false,
         category:["sports", "crossovers"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"11",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category:["muscle", "electric"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"12",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category: ["crossovers", "electric"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"13",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'favorite',
         favorite: true,
-        legendary: false,
         category:["sports", "crossovers"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"14",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category:["muscle", "electric"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
+        carId:"15",
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
-        legendary: false,
         category: ["crossovers", "electric"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
@@ -193,12 +194,16 @@ all.addEventListener('click', () => {
 const pushGarageCars = ( data ) => {
     garage.innerHTML = ''
     data.map((item) => {
-        const { name, description, status, imageUrl } = item;
+        const { name, description, status, imageUrl, carId, favorite } = item;
+
+        let image = 'star-normal.svg';
+        if (favorite) image = 'star-favorite.svg';
+        if ( !favorite && status === 'select') image = 'star-select.svg';
 
         // THE IMAGES DISPLAYED DEPENDS ON THE STATUS GIVEN DIRECTLY
         garage.innerHTML += `
-            <section class="flexgapsmall cardetail ${status}">
-                <img src="/images/star-${status}.svg" alt="star" class="star">
+            <section class="flexgapsmall cardetail ${status}" id=${carId}>
+                <img src="/images/${image}" alt="star" class="star" onClick="toggleFavorite(${carId})">
                 <div class="carbox"> 
                     <div class="rectangle"> </div>
                     <img src=${imageUrl} alt="white car" class="whitecar">
@@ -211,6 +216,16 @@ const pushGarageCars = ( data ) => {
             </section>
         `
     })
+}
+
+const toggleFavorite = (id) => {
+    garageData = garageData.map((car) => {
+        if ( String(id) === car.carId ) {
+            return { ...car, favorite: !car.favorite};
+        }
+        else return {...car}
+    })
+    pushGarageCars(garageData)
 }
 
 document.addEventListener('keydown', evt => {
@@ -229,5 +244,4 @@ searchCars.addEventListener('change', () => {
     console.log(searchCars.value)
 })
 
-pushGarageCars(garageData)
-console.log(star);
+pushGarageCars(garageData);
