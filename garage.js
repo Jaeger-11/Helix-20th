@@ -197,12 +197,17 @@ const pushGarageCars = ( data ) => {
         const { name, description, status, imageUrl, carId, favorite } = item;
 
         let image = 'star-normal.svg';
-        if (favorite) image = 'star-favorite.svg';
+        let style = 'normal';
+        if (favorite) { 
+            image = 'star-favorite.svg'; 
+            style = 'favorite'
+        };
         if ( !favorite && status === 'select') image = 'star-select.svg';
+        if ( status === 'select' ) style = 'select';
 
         // THE IMAGES DISPLAYED DEPENDS ON THE STATUS GIVEN DIRECTLY
         garage.innerHTML += `
-            <section class="flexgapsmall cardetail ${status}" id=${carId}>
+            <section class="flexgapsmall cardetail ${style}" id=${carId}>
                 <img src="/images/${image}" alt="star" class="star" onClick="toggleFavorite(${carId})">
                 <div class="carbox"> 
                     <div class="rectangle"> </div>
