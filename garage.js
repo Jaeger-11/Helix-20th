@@ -63,7 +63,7 @@ let garageData = [
         status: 'select',
         favorite: false,
         legendary: true,
-        category: ["crossovers", "muscle", "electric"],
+        category: ["crossovers", "muscle", "electric", "sports"],
         imageUrl: '/images/chevrolet-camaro.svg'
     },
     {
