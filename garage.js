@@ -7,7 +7,7 @@ const sports = document.querySelector('#sports');
 const pickup = document.querySelector('#pickup');
 const muscle = document.querySelector('#muscle');
 const crossovers = document.querySelector('#crossovers');
-
+const star = document.querySelector('.star');
 const filters = [all, favorites, electric, sports, pickup, muscle, crossovers];
 
 let garageData = [
@@ -41,7 +41,7 @@ let garageData = [
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'gold',
+        status: 'favorite',
         favorite: true,
         legendary: false,
         category: ["sports", "electric"],
@@ -59,7 +59,7 @@ let garageData = [
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'green',
+        status: 'select',
         favorite: false,
         legendary: true,
         category: ["crossovers", "muscle", "electric"],
@@ -68,7 +68,7 @@ let garageData = [
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'gold',
+        status: 'favorite',
         favorite: true,
         legendary: false,
         category:["sports", "crossovers"],
@@ -95,7 +95,7 @@ let garageData = [
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'gold',
+        status: 'favorite',
         favorite: true,
         legendary: false,
         category:["sports", "crossovers"],
@@ -122,7 +122,7 @@ let garageData = [
     {
         name: 'chevrolet camaro',
         description: 'Some short description of this car',
-        status: 'gold',
+        status: 'favorite',
         favorite: true,
         legendary: false,
         category:["sports", "crossovers"],
@@ -198,7 +198,7 @@ const pushGarageCars = ( data ) => {
         // THE IMAGES DISPLAYED DEPENDS ON THE STATUS GIVEN DIRECTLY
         garage.innerHTML += `
             <section class="flexgapsmall cardetail ${status}">
-                <img src="/images/${status === 'gold' ? `star-gold.svg` : 'star.svg'}" alt="star" class="star">
+                <img src="/images/star-${status}.svg" alt="star" class="star">
                 <div class="carbox"> 
                     <div class="rectangle"> </div>
                     <img src=${imageUrl} alt="white car" class="whitecar">
@@ -206,7 +206,7 @@ const pushGarageCars = ( data ) => {
                 <div>
                     <h4 class="font600 carname">${name}</h4>
                     <p class="white65 description">${description}</p>
-                    ${ status === 'green' ? `<button><img src="/images/long-arrow-left.svg" alt="arrow left"> SELECT </button>` : ''}
+                    ${ status === 'select' ? `<button><img src="/images/long-arrow-left.svg" alt="arrow left"> SELECT </button>` : ''}
                 </div>
             </section>
         `
@@ -230,3 +230,4 @@ searchCars.addEventListener('change', () => {
 })
 
 pushGarageCars(garageData)
+console.log(star);
