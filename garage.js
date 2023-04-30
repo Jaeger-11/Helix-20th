@@ -22,7 +22,7 @@ let garageData = [
     },
     {
         carId:"2",
-        name: 'chevrolet camaro',
+        name: 'camry',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
@@ -31,7 +31,7 @@ let garageData = [
     },
     {
         carId:"3",
-        name: 'chevrolet camaro',
+        name: 'ford mustang',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
@@ -40,7 +40,7 @@ let garageData = [
     },
     {
         carId:"4",
-        name: 'chevrolet camaro',
+        name: 'sedan',
         description: 'Some short description of this car',
         status: 'favorite',
         favorite: true,
@@ -49,7 +49,7 @@ let garageData = [
     },
     {
         carId:"5",
-        name: 'chevrolet camaro',
+        name: 'bugatti',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
@@ -58,7 +58,7 @@ let garageData = [
     },
     {
         carId:"6",
-        name: 'chevrolet camaro',
+        name: 'tesla',
         description: 'Some short description of this car',
         status: 'select',
         favorite: false,
@@ -68,7 +68,7 @@ let garageData = [
     },
     {
         carId:"7",
-        name: 'chevrolet camaro',
+        name: 'mitsubishi',
         description: 'Some short description of this car',
         status: 'favorite',
         favorite: true,
@@ -77,7 +77,7 @@ let garageData = [
     },
     {
         carId:"8",
-        name: 'chevrolet camaro',
+        name: 'volkswagen beetle',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
@@ -86,7 +86,7 @@ let garageData = [
     },
     {
         carId:"9",
-        name: 'chevrolet camaro',
+        name: 'mercedes',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
@@ -95,7 +95,7 @@ let garageData = [
     },
     {
         carId:"10",
-        name: 'chevrolet camaro',
+        name: 'audi',
         description: 'Some short description of this car',
         status: 'favorite',
         favorite: true,
@@ -104,7 +104,7 @@ let garageData = [
     },
     {
         carId:"11",
-        name: 'chevrolet camaro',
+        name: 'kia',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
@@ -113,7 +113,7 @@ let garageData = [
     },
     {
         carId:"12",
-        name: 'chevrolet camaro',
+        name: 'porsche',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
@@ -122,7 +122,7 @@ let garageData = [
     },
     {
         carId:"13",
-        name: 'chevrolet camaro',
+        name: 'jetta',
         description: 'Some short description of this car',
         status: 'favorite',
         favorite: true,
@@ -131,7 +131,7 @@ let garageData = [
     },
     {
         carId:"14",
-        name: 'chevrolet camaro',
+        name: 'cadillac',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
@@ -140,7 +140,7 @@ let garageData = [
     },
     {
         carId:"15",
-        name: 'chevrolet camaro',
+        name: 'alfa romeo',
         description: 'Some short description of this car',
         status: 'normal',
         favorite: false,
@@ -148,6 +148,8 @@ let garageData = [
         imageUrl: '/images/chevrolet-camaro.svg'
     },
 ]
+
+let currentfilter = "all";
 
 filters.map((item) => {
     item.addEventListener('click', () => {
@@ -158,38 +160,57 @@ filters.map((item) => {
 })
 
 electric.addEventListener('click', () => {
+    currentfilter = 'electric';
     let data = garageData.filter((item) => item.category.includes('electric') )
     pushGarageCars(data)
 })
 
 sports.addEventListener('click', () => {
+    currentfilter = 'sports';
     let data = garageData.filter((item) => item.category.includes('sports') )
     pushGarageCars(data)
 })
 
 pickup.addEventListener('click', () => {
+    currentfilter = 'pickup';
     let data = garageData.filter((item) => item.category.includes('pickup') )
     pushGarageCars(data)
 })
 
 muscle.addEventListener('click', () => {
+    currentfilter = 'muscle';
     let data = garageData.filter((item) => item.category.includes('muscle') )
     pushGarageCars(data)
 })
 
 crossovers.addEventListener('click', () => {
+    currentfilter = 'crossovers';
     let data = garageData.filter((item) => item.category.includes('crossovers') )
     pushGarageCars(data)
 })
 
 favorites.addEventListener('click', () => {
+    currentfilter = 'favorites';
     let data = garageData.filter((item) => item.favorite)
     pushGarageCars(data)
 })
 
 all.addEventListener('click', () => {
+    currentfilter = 'all';
     pushGarageCars(garageData)
 })
+
+const applyCurrentFilter = () => {
+    let data;
+    if (currentfilter === 'all'){
+        data = garageData;
+    } else if ( currentfilter === 'favorites' ){
+        data = garageData.filter((item) => item.favorite)
+    } else {
+        data = garageData.filter((item) => item.category.includes(currentfilter));
+    }
+    pushGarageCars(data);
+};
 
 const pushGarageCars = ( data ) => {
     garage.innerHTML = ''
@@ -230,7 +251,20 @@ const toggleFavorite = (id) => {
         }
         else return {...car}
     })
-    pushGarageCars(garageData)
+    applyCurrentFilter();
+}
+
+const filterCars = ( searchValue ) => {
+    let filteredData;
+    if ( currentfilter === 'all' ){
+        filteredData = garageData;
+    } else if ( currentfilter === 'favorites' ){
+        filteredData = garageData.filter((item) => item.favorite);
+    } else {
+        filteredData = garageData.filter((item) => item.category.includes(currentfilter));
+    }
+    filteredData = filteredData.filter((car) => car.name.toLowerCase().includes(searchValue.toLowerCase()));
+    pushGarageCars(filteredData);
 }
 
 document.addEventListener('keydown', evt => {
@@ -245,8 +279,8 @@ document.addEventListener("mousedown", function(event) {
     }
   });
 
-searchCars.addEventListener('change', () => {
-    console.log(searchCars.value)
+searchCars.addEventListener('input', () => {
+    filterCars(searchCars.value);
 })
 
 pushGarageCars(garageData);
