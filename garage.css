@@ -389,3 +389,10 @@ main{
         width: 1.2rem;
     }
 }
+
+/* height responsiveness */
+@media screen and (min-height: 1000px){
+    .garagecontainer{
+        height: 50vh;
+    }
+}
