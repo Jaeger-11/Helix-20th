@@ -334,6 +334,7 @@ main{
     border: none;
     border-radius: clamp(12px, 0.5vw, 20px);
     background: rgba(255, 201, 62, 0.9);
+    cursor: pointer;
 }
 .select button img{
     width: clamp(2rem, 2vw, 3vw);

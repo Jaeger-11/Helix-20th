@@ -243,7 +243,7 @@ const pushParksData = ( data ) => {
                         `<div class="flexgapsmall font600"> ${cost} <img src="/images/lix-yellow.svg" alt="lix-yellow" class="icons"> </div>
                         `}
                     </div>
-                    ${status === 'selected' ? `<button> <img src="/images/long-arrow-left.svg" alt="arrow left"> BUY </button>` : '' }
+                    ${status === 'selected' ? `<button onClick="buyPark(${id})"> <img src="/images/long-arrow-left.svg" alt="arrow left"> BUY </button>` : '' }
                 </div>
             </section>
         `
@@ -267,12 +267,17 @@ const selectPark = (id) => {
     })
     pushParksData(parkingData);
 }
-// IS THERE ANYTHING ELSE I SHOULD ADD TO THE KEYPRESS FUNCTIONS
+
+const buyPark = (id) => {
+    console.log(id)
+}
+
 document.addEventListener('keydown', evt => {
     if (evt.key === 'Escape') {
         alert('Escape pressed');
     }
 });
+
 
 document.addEventListener('keydown', evt => {
     if (evt.key === 'q') {

@@ -228,7 +228,7 @@ const pushGarageCars = ( data ) => {
 
         // THE IMAGES DISPLAYED DEPENDS ON THE STATUS GIVEN DIRECTLY
         garage.innerHTML += `
-            <section class="flexgapsmall cardetail ${style}" id=${carId} onclick="selectCar(${carId})">
+            <section class="flexgapsmall cardetail ${style}" id=${carId} onclick="carClicked(${carId})">
                 <img src="/images/${image}" alt="star" class="star" onClick="toggleFavorite(${carId})">
                 <div class="carbox"> 
                     <div class="rectangle"> </div>
@@ -237,7 +237,7 @@ const pushGarageCars = ( data ) => {
                 <div>
                     <h4 class="font600 carname">${name}</h4>
                     <p class="white65 description">${description}</p>
-                    ${ status === 'select' ? `<button><img src="/images/long-arrow-left.svg" alt="arrow left"> SELECT </button>` : ''}
+                    ${ status === 'select' ? `<button onClick="carSelect(${carId})"><img src="/images/long-arrow-left.svg" alt="arrow left"> SELECT </button>` : ''}
                 </div>
             </section>
         `
@@ -254,7 +254,7 @@ const toggleFavorite = (id) => {
     applyCurrentFilter();
 }
 
-const selectCar = (id) => {
+const carClicked = (id) => {
     garageData = garageData.map((car) => {
         if ( String(id) === car.carId ) {
             return { ...car, status: 'select'};
@@ -264,6 +264,10 @@ const selectCar = (id) => {
         } return {...car}
     })
     applyCurrentFilter();
+}
+
+const carSelect = (id) => {
+    console.log(id)
 }
 
 const filterCars = ( searchValue ) => {
