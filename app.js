@@ -4,7 +4,7 @@ const walletvalue = document.querySelector('#walletvalue');
 const currentpage = document.querySelector('#currentpage');
 const lastpage = document.querySelector('#lastpage');
 
-const parkingData = [
+let parkingData = [
     {
         id: '121',
         cost: '1.540',
@@ -18,7 +18,7 @@ const parkingData = [
     {
         id: '123',
         cost: '1.540',
-        status: 'selected',
+        status: 'free',
     },
     {
         id: '124',
@@ -98,7 +98,7 @@ const parkingData = [
     {
         id: '139',
         cost: '1.540',
-        status: 'selected',
+        status: 'free',
     },
     {
         id: '140',
@@ -148,7 +148,7 @@ const parkingData = [
     {
         id: '149',
         cost: '1.540',
-        status: 'selected',
+        status: 'free',
     },
     {
         id: '150',
@@ -198,7 +198,7 @@ const parkingData = [
     {
         id: '159',
         cost: '1.540',
-        status: 'selected',
+        status: 'free',
     }
     ,
     {
@@ -214,7 +214,7 @@ const parkingData = [
     {
         id: '162',
         cost: '1.540',
-        status: 'selected',
+        status: 'free',
     }
 ]
 
@@ -233,7 +233,7 @@ const pushParksData = ( data ) => {
         // THE STYLING HERE RELIES DIRECTLY ON THE STATUS IN THE DATA
 
         parks.innerHTML += `
-            <section class='park park${status}'>
+            <section class='park park${status}' onClick="selectPark(${id})">
                 <p class="dash"></p>
                 <div class="inner">
                     <p class="id"> ${id} </p>
@@ -255,6 +255,17 @@ const setWalletValue = (value) => {
 }
 const setFreePlaces = (value) => {
     freeplaces.textContent = value;
+}
+const selectPark = (id) => {
+    parkingData = parkingData.map((park) => {
+        if (park.status === 'occupied') {
+            return { ...park }
+        } else if ( String(id) === park.id ) {
+            return { ...park, status: 'selected'};
+        }
+        else return {...park, status : 'free'}
+    })
+    pushParksData(parkingData);
 }
 // IS THERE ANYTHING ELSE I SHOULD ADD TO THE KEYPRESS FUNCTIONS
 document.addEventListener('keydown', evt => {

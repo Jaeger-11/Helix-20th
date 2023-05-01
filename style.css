@@ -225,6 +225,7 @@ main{
 .parkoccupied{
     background: rgba(172, 52, 52, 0.08);
     border: 2px solid rgba(172, 52, 52, 0.25);
+    pointer-events: none;
 }
 .parkoccupied:hover{
     background: rgba(172, 52, 52, 0.15);

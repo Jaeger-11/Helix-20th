@@ -60,7 +60,7 @@ let garageData = [
         carId:"6",
         name: 'tesla',
         description: 'Some short description of this car',
-        status: 'select',
+        status: 'normal',
         favorite: false,
         legendary: true,
         category: ["crossovers", "muscle", "electric", "sports"],
@@ -228,7 +228,7 @@ const pushGarageCars = ( data ) => {
 
         // THE IMAGES DISPLAYED DEPENDS ON THE STATUS GIVEN DIRECTLY
         garage.innerHTML += `
-            <section class="flexgapsmall cardetail ${style}" id=${carId}>
+            <section class="flexgapsmall cardetail ${style}" id=${carId} onclick="selectCar(${carId})">
                 <img src="/images/${image}" alt="star" class="star" onClick="toggleFavorite(${carId})">
                 <div class="carbox"> 
                     <div class="rectangle"> </div>
@@ -250,6 +250,18 @@ const toggleFavorite = (id) => {
             return { ...car, favorite: !car.favorite};
         }
         else return {...car}
+    })
+    applyCurrentFilter();
+}
+
+const selectCar = (id) => {
+    garageData = garageData.map((car) => {
+        if ( String(id) === car.carId ) {
+            return { ...car, status: 'select'};
+        }
+        else if ( car.status = 'select' ) {
+            return { ...car, status : 'normal'}
+        } return {...car}
     })
     applyCurrentFilter();
 }
