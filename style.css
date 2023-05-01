@@ -328,13 +328,13 @@ main{
 }
 .leftbtn{
     position: absolute;
-    left: -5%;
+    left: -4vw;
     top: 50%;
     transform: translateY(-50%);
 }
 .rightbtn{
     position: absolute;
-    right: -5%;
+    right: -4vw;
     top: 50%;
     transform: translateY(-50%);
 }
