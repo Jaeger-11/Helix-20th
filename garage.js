@@ -228,8 +228,8 @@ const pushGarageCars = ( data ) => {
 
         // THE IMAGES DISPLAYED DEPENDS ON THE STATUS GIVEN DIRECTLY
         garage.innerHTML += `
-            <section class="flexgapsmall cardetail ${style}" id=${carId} onclick="carClicked(${carId})">
-                <img src="/images/${image}" alt="star" class="star" onClick="toggleFavorite(${carId})">
+            <section class="flexgapsmall cardetail ${style}" id=${carId} onclick="carClicked(event,${carId})">
+                <img src="/images/${image}" alt="star" class="star" onClick="toggleFavorite(event,${carId})">
                 <div class="carbox"> 
                     <div class="rectangle"> </div>
                     <img src=${imageUrl} alt="white car" class="whitecar">
@@ -244,7 +244,8 @@ const pushGarageCars = ( data ) => {
     })
 }
 
-const toggleFavorite = (id) => {
+const toggleFavorite = (event, id) => {
+    event.stopPropagation()
     garageData = garageData.map((car) => {
         if ( String(id) === car.carId ) {
             return { ...car, favorite: !car.favorite};
@@ -254,7 +255,7 @@ const toggleFavorite = (id) => {
     applyCurrentFilter();
 }
 
-const carClicked = (id) => {
+const carClicked = (event, id) => {
     garageData = garageData.map((car) => {
         if ( String(id) === car.carId ) {
             return { ...car, status: 'select'};

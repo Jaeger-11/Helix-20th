@@ -216,7 +216,7 @@ main{
     align-items: center;
     padding: 0px 0.5vw 0 0.2vw;
     border: none;
-    border-radius: clamp(12px, 1vw, 30px);
+    border-radius: 9999px;
     background: rgba(255, 201, 62, 0.9);
     cursor: pointer;
 }
@@ -226,7 +226,7 @@ main{
 .parkoccupied{
     background: rgba(172, 52, 52, 0.08);
     border: 2px solid rgba(172, 52, 52, 0.25);
-    pointer-events: none;
+    cursor: no-drop;
 }
 .parkoccupied:hover{
     background: rgba(172, 52, 52, 0.15);
